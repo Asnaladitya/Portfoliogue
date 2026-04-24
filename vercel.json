@@ -1,14 +1,18 @@
 {
   "version": 2,
-  "outputDirectory": "public",
-  "rewrites": [
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.5"
+    }
+  },
+  "routes": [
     {
-      "source": "/build/(.*)",
-      "destination": "/public/build/$1"
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
     },
     {
-      "source": "/(.*)",
-      "destination": "/api/index.php"
+      "src": "/(.*)",
+      "dest": "/api/index.php"
     }
   ]
 }
